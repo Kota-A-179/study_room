@@ -13,7 +13,8 @@
 ActiveRecord::Schema[7.0].define(version: 2024_09_11_090607) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nickname"
-    t.integer "occupation_id", null: false
+    t.integer "status_id", null: false
+    t.integer "occupation_id"
     t.integer "icon_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
