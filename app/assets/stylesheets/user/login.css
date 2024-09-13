@@ -1,4 +1,4 @@
-.main {
+.login-main {
   width: 100vw;
   height: 100vh;
   background-image: url('top-image.jpg');
@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-.title{
+.login-title{
   margin-top: 80px;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   font-weight: 600;
 }
 
-.access{
+.access-menu{
   width: 40vw;
   margin-top: 80px;
   padding: 20px 0;

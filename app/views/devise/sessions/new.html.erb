@@ -1,10 +1,10 @@
-<div class="main">
-  <div class="title">
+<div class="login-main">
+  <div class="login-title">
     <div class="sub-title">自習室アプリ</div>
     <div class="main-title">Study Room</div>
   </div>
 
-  <div class="access">
+  <div class="access-menu">
     <div class="new-registration">
       <%= link_to "初めての方はこちら", new_registration_path(resource_name) %>
     </div>
@@ -25,7 +25,7 @@
           </div>
         <% end %> 
 
-        <div class="actions">
+        <div class="session-btn">
           <%= f.submit "入室する" %>
         </div>
       <% end %>
