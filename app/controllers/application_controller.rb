@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
   
   protected
   def after_sign_in_path_for(resource)
-    room_users_path(resource)
+    rooms_path(resource)
   end
   
   def after_sign_up_path_for(resource)
-    room_users_path(resource)
+    rooms_path(resource)
   end
 
   private
