@@ -1,6 +1,6 @@
 .header{
   width: 100vw;
-  padding: 2vh 3vw;
+  padding: 1vh 3vw;
   background-color: rgba(98,137,164);
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 .app-name a{
   width: 185px;
   height: 49px;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -19,16 +19,28 @@
 .header-nav{
   display: flex;
   min-width: 200px;
+  margin-right: 7vw;
+  text-decoration: none;
+  list-style-type: none;
 }
 
 .mypage{
   text-decoration: none;
-  margin-right: 3vw;
+  margin-right: 5vw;
+  padding: 10px 25px;
+  border: 1px solid black;
+  border-radius: 4px;
   color: #fff;
+  font-size: 18px;
   font-weight: bold;
 }
 
 .logout{
   text-decoration: none;
+  padding: 10px 25px;
+  border: 1px solid black;
+  border-radius: 4px;
   color: #fff;
+  font-size: 18px;
+  font-weight: bold;
 }
