@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const preview = () => {
   const iconDropdown = document.querySelector('.icon-dropdown');
   const iconPreviewImage = document.getElementById('icon-preview-image');
 
@@ -11,4 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+};
+
+
+window.addEventListener("turbo:load", preview )
+window.addEventListener("turbo:render", preview )
