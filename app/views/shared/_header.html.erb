@@ -1,0 +1,11 @@
+<header class="header">
+  <div class="app-name">
+    <%= link_to "Study Room", room_users_path, local: true %>
+  </div>
+  <% if user_signed_in? %>
+    <ul class="header-nav">
+      <li><%= link_to "マイページ", "#", class:"mypage" %>
+      <li><%= link_to "退室する", destroy_user_session_path, data: {turbo_method: :delete}, class: "logout" %>
+    </ul>
+  <% end %>
+</header>
