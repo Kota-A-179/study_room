@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   devise_scope :user do
-    root to: 'devise/sessions#new'
+    root to: 'users/sessions#new'
   end
-  resources :room_users, only: [:index]
+  resources :rooms, only: [:create, :destroy] do
+    resources :room_users, only: [:index]
+  end
 end
