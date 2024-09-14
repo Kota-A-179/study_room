@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
   
   protected
   def after_sign_in_path_for(resource)
-    @room = room_search || @room = Room.create(name: "Room#{Room.count + 1}")
+    @room = room_search || @room = Room.create(name: "#{Room.count + 1}")
     @room.room_users.create(user_id: resource.id)
     room_room_users_path(room_id: @room.id) 
   end
   
   def after_sign_up_path_for(resource)
-    @room = room_search || @room = Room.create(name: "Room#{Room.count + 1}")
+    @room = room_search || @room = Room.create(name: "#{Room.count + 1}")
     @room.room_users.create(user_id: resource.id)
     room_room_users_path(room_id: @room.id) 
   end
