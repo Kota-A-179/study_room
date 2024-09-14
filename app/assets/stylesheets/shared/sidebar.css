@@ -1,0 +1,7 @@
+.sidebar{
+  width: 7vw;
+  height: 100%;
+  background-color: #005070;
+  color: #fff;
+  overflow: scroll;
+}

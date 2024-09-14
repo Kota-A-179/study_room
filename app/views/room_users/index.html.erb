@@ -1,1 +1,7 @@
 <%= render partial: 'shared/header', locals: { room: @room } %>
+<div class="room-users-index-main">
+  <%= render partial: 'shared/sidebar', locals: { rooms: @rooms } %>
+  <div class="room-users-wrap">
+  </div>
+</div>
+<%= render 'shared/footer' %>
