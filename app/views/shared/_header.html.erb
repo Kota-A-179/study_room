@@ -1,6 +1,6 @@
 <header class="header">
   <div class="app-name">
-    <%= link_to "Study Room", room_users_path, local: true %>
+    <%= link_to "Study Room", room_room_users_path(room), local: true %>
   </div>
   <% if user_signed_in? %>
     <ul class="header-nav">
