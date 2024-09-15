@@ -5,8 +5,34 @@
 }
 
 .room_users_wrap{
-  width: 93vw;
+  width: calc( 100vw - 90px );
   height: 100%;
   background-color: #f5f5f5;
   overflow: scroll;
+  display: flex;
 }
+
+.user{
+  margin: 15px 20px;
+  padding: 5px 20px;
+  background-color: rgba(255,245,108,0.5);
+}
+
+.user-icon{
+  position: relative;
+}
+
+.user-nickname{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  
+}
+.user-status{
+  text-align: center;
+  color: #666;
+}
+
+
