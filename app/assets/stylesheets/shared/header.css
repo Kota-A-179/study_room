@@ -20,11 +20,10 @@
   display: flex;
   min-width: 200px;
   margin: 1vh 5vw;
-  text-decoration: none;
   list-style-type: none;
 }
 
-.mypage{
+.mypage-btn{
   text-decoration: none;
   margin-right: 5vw;
   padding: 7px 25px;
@@ -35,7 +34,7 @@
   font-weight: bold;
 }
 
-.logout{
+.logout-btn{
   text-decoration: none;
   padding: 7px 25px;
   border: 1px solid black;
