@@ -5,7 +5,7 @@
     <% @room.room_users.each do |room_user| %>
       <div class="user">
         <div class="user-icon">
-          <%= link_to(room_room_users_path(@room), class: "user-mypage-btn") do %>
+          <%= link_to(user_path(room_user.user), class: "user-mypage-btn") do %>
             <span class="user-nickname"><%= room_user.user.nickname %></span>
             <%= image_tag room_user.user.icon.image_path, class: "user-mypage-btn-icon" %>
             <% if room_user.user.nickname.present? %>
