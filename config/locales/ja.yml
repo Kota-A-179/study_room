@@ -32,7 +32,7 @@ ja:
         birthday: 生年月日
     models:
       user: ユーザー
-  activemodel:
+  activerecord:
     attributes:
       study:
         title: 学習タイトル
