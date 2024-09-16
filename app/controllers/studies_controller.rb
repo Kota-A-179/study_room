@@ -1,5 +1,6 @@
 class StudiesController < ApplicationController
   before_action :set_room
+  before_action :set_study, only: [:edit, :update]
 
   def new
     @study = current_user.studies.new
@@ -15,20 +16,29 @@ class StudiesController < ApplicationController
   end
 
   def edit
-    @study = current_user.studies.last
   end
 
   def update
-    @study = Study.find(params[:id])
     if @study.update(study_params)
       redirect_to room_room_users_path(@room)
     else
       render :edit, status: :unprocessable_entity
     end
   end
+
+  def destroy
+    study = Study.find(params[:id])
+    study.destroy
+    redirect_to room_room_users_path(@room)
+  end
+
   private
   def set_room
     @room = Room.find(current_user.room_user.room_id)
+  end
+
+  def set_study
+    @study = Study.find(params[:id])
   end
 
   def study_params

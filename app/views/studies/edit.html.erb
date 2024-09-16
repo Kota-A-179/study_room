@@ -1,10 +1,13 @@
 <%= render partial: 'shared/header', locals: { room: @room } %>
 <%= form_with model: @study, class: "form-main", local: true do |f| %>
   <div class="form-wrap">
-    <div class="form-header">
-      <h1 class="form-header-text">学習記録</h1>
+    <div class="study-form-header">
+      <h1 class="study-form-header-text">
+        学習記録
+      </h1>
+      <%= link_to "削除", study_path(@study), data: {turbo_method: :delete, local: true}, class:"delete-btn" %>
     </div>
-
+    
     <%= render "shared/error_messages", model: f.object %>
 
     <div class="form-group">
