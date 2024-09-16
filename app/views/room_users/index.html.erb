@@ -7,15 +7,23 @@
         <div class="user-icon">
           <%= link_to(room_room_users_path(@room), class: "user-mypage-btn") do %>
             <span class="user-nickname"><%= room_user.user.nickname %></span>
-            <%= image_tag room_user.user.icon.image_path, style: "width: 100px; height: auto;", class: "user-mypage-btn-icon" %>
+            <%= image_tag room_user.user.icon.image_path, class: "user-mypage-btn-icon" %>
             <% if room_user.user.nickname.present? %>
             <% end %>
           <% end %>
         </div>
-        <div class="user-status">
+        <div class="user-status-occupation">
           <%= room_user.user.status.name %>
+          <% if room_user.user.occupation.present? %>
+            (<%= room_user.user.occupation.name %>)
+          <% end %>
         </div>
         <div class="user-study-title">
+          <%# if room_user.user.studies.present? %>
+            <%#= room_user.user.studies.last.title %>
+          <%# else %>
+            準備中
+          <%# end %>
         </div>
       </div>
     <% end %>
