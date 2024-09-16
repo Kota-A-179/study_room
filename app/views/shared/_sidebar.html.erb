@@ -1,0 +1,7 @@
+<div class="sidebar">
+  <% rooms.each do |room| %>
+    <div class="room-name">
+      <%= link_to room.name, room_room_users_path(room_id: room.id) %>
+    </div>
+  <% end %>
+</div>

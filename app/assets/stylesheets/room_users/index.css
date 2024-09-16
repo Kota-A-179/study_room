@@ -1,0 +1,48 @@
+.room-users-index-main{
+  width: 100vw;
+  height: calc( 85vh - 67.9px );
+  display: flex;
+}
+
+.room_users_wrap{
+  width: calc( 100vw - 90px );
+  height: 100%;
+  background-color: #f5f5f5;
+  overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user{
+  width: calc( (100vw - (6vw * 5 + 90px)) / 5 );
+  margin: 2vh 3vw;
+  padding: 5px 20px;
+  background-color: rgba(255,245,108,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-icon{
+  position: relative;
+}
+
+.user-nickname{
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;  
+}
+
+.user-mypage-btn-icon{
+  width: 100px;
+  height: auto;
+}
+
+.user-status-occupation{
+  text-align: center;
+  color: #666;
+}
+
+

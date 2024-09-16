@@ -1,0 +1,19 @@
+.sidebar{
+  width: 90px;
+  height: 100%;
+  background-color: #005070;
+  color: #fff;
+  overflow: scroll;
+}
+
+.room-name{
+  height: 70px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.room-name a{
+  color: #fff;
+  font-size: 20px;
+  padding: 10px;
+}
