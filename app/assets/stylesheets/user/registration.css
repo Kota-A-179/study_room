@@ -2,7 +2,7 @@
   display: contents;
 }
 
-.registration-main{
+.form-main{
   width: 100%;
   min-width: 800px;
   height: 100%;
@@ -115,7 +115,7 @@
   margin: 0 auto;
 }
 
-.register-red-btn{
+.register-blue-btn{
   width: 100%;
   background: #005070;
   border: 1px solid #005070;
