@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     root to: 'users/sessions#new'
   end
   resources :rooms, only: [:create, :destroy] do
-    resources :room_users, only: [:index]
+    resources :room_users, only: :index
   end
-  resources :studies, except: [:index]
+  resources :studies, except: :index
+  resources :users, only: :show
 end

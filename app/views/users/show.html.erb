@@ -1,0 +1,42 @@
+<%= render partial: 'shared/header', locals: { room: @room } %>
+<div class="mypage-main">
+  <div class="mypage-wrap">
+    <h1 class="mypage-header">ユーザーマイページ</h1>
+
+    <div class="user-wrap">
+      <h2 class="user-header">〇ユーザー情報</h2>
+      <div class="user-info-index">
+        <div class="user-icon">
+          <%= image_tag @user.icon.image_path, class: "user-mypage-icon" %>
+        </div>
+        <div class="user-info-text">
+          <h3 class="mypage-user-nickname">
+            <% if @user.nickname.present? %>
+              ニックネーム： <%= @user.nickname %>
+            <% else %>
+              未設定
+            <% end %>
+          </h3>
+          <h3 class="mypage-user-status-occupation">
+            身分・職業： <%= @user.status.name %>・<%= @user.occupation.name if @user.occupation.present? %>
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="goal-wrap">
+      目標：
+    </h2>
+
+    <div class="study-wrap">
+      <h2 class="study-header">〇学習記録</h2>
+      <div class="study-index">
+        <ul class="study-list">
+          <% @studies.each do |study| %>
+            <li><%= link_to study.title, "#", class: "study-show" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
