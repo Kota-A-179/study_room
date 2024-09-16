@@ -19,11 +19,11 @@
           <% end %>
         </div>
         <div class="user-study-title">
-          <%# if room_user.user.studies.present? %>
-            <%#= room_user.user.studies.last.title %>
-          <%# else %>
+          <% if room_user.user.studies.present? %>
+            <%= room_user.user.studies.last.title %>
+          <% else %>
             準備中
-          <%# end %>
+          <% end %>
         </div>
       </div>
     <% end %>

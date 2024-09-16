@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_13_085946) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_16_030600) do
   create_table "room_users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "room_id", null: false
     t.bigint "user_id", null: false
@@ -24,6 +24,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_13_085946) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "studies", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "goal"
+    t.text "content"
+    t.text "review"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_studies_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -43,4 +54,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_13_085946) do
 
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
+  add_foreign_key "studies", "users"
 end
