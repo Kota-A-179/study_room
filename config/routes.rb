@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :rooms, only: [:create, :destroy] do
     resources :room_users, only: [:index]
   end
+  resources :studies, except: [:index]
 end
