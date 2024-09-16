@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def room_search
     Room.all.includes(:room_users).each do |room|
-        return room if room.room_users.length < 12
+        return room if room.room_users.length < 15
     end
     return nil
   end
