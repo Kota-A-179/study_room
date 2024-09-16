@@ -32,6 +32,13 @@ ja:
         birthday: 生年月日
     models:
       user: ユーザー
+  activemodel:
+    attributes:
+      study:
+        title: 学習タイトル
+        goal: 学習目標
+        content: 学習内容
+        review: 振り返り
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
