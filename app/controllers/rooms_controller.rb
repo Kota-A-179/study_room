@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
-def create
-end
+  def create
+  end
 
-def destroy
+  def destroy
+  end
 end
