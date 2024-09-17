@@ -31,5 +31,13 @@
     <div class="user-mypage-btn">
       <%= link_to "ユーザーマイページに戻る", user_path(@study.user) %>
     </div>
+
+    <% if current_user == @study.user %>
+      <div class="nav-group">
+        <%= link_to "編集する", edit_study_path(@study), class:"edit-btn" %>
+        <%= link_to "削除する", study_path(@study), data: {turbo_method: :delete}, class:"destroy-btn" %>
+      </div>
+    <% end %>
+    
   </div>
 </div>
