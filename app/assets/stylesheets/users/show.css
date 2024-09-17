@@ -22,6 +22,21 @@
   width: 70%;
 }
 
+.user-header{
+  display: flex;
+  align-items: center;
+}
+
+.user-header a{
+  padding: 1px 5px;
+  margin: 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #99cc65;
+  text-decoration: none;
+}
+
 .user-info-index{
   border: 1px solid black;
   display: flex;
