@@ -1,6 +1,6 @@
 class StudiesController < ApplicationController
   before_action :set_room
-  before_action :set_study, only: [:edit, :update]
+  before_action :set_study, only: [:edit, :update, :show]
 
   def new
     @study = current_user.studies.new
@@ -13,6 +13,9 @@ class StudiesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
   end
 
   def edit

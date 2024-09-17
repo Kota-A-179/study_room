@@ -33,7 +33,7 @@
       <div class="study-index">
         <ul class="study-list">
           <% @studies.each do |study| %>
-            <li><%= link_to study.title, "#", class: "study-show" %></li>
+            <li><%= link_to study.title, study_path(study), class: "study-show" %></li>
           <% end %>
         </ul>
       </div>
