@@ -5,7 +5,6 @@
       <h1 class="study-form-header-text">
         学習記録
       </h1>
-      <%= link_to "削除", study_path(@study), data: {turbo_method: :delete, local: true}, class:"delete-btn" %>
     </div>
     
     <%= render "shared/error_messages", model: f.object %>
@@ -31,7 +30,7 @@
       <div class="form-text-wrap">
         <%= f.label :content, "学習内容", class: "form-text" %>
         <span class="dispensable">(任意)</span>
-        <%= f.text_area :content, class:"study-text", placeholder:"メモ用" %>
+        <%= f.text_area :content, class:"study-textarea", placeholder:"メモ用" %>
       </div>
     </div>
 
@@ -39,7 +38,7 @@
       <div class="form-text-wrap">
         <%= f.label :review, "振り返り", class: "form-text" %>
         <span class="dispensable">(任意)</span>
-        <%= f.text_area :review, class:"study-text", placeholder:"例)「to 動詞」の使い方が複数あり難しかった&#13;&#10;例)難しく感じた場面で集中することができなかった" %>
+        <%= f.text_area :review, class:"study-textarea", placeholder:"例)「to 動詞」の使い方が複数あり難しかった&#13;&#10;例)難しく感じた場面で集中することができなかった" %>
       </div>
     </div>
 
