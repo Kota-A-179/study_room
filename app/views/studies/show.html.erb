@@ -1,0 +1,43 @@
+<%= render partial: 'shared/header', locals: { room: @room } %>
+<div class="record-main">
+  <div class="record-wrap">
+    <div class="record-header">
+      <h1 class="record-header-text">
+        <%= @study.title %>
+      </h1>
+    </div>
+    
+    <div class="record-group">
+      <div class="record-text-wrap">
+        <div class="record-text">学習目標</div>
+        <div class="record-default"><%= @study.goal %></div>
+      </div>
+    </div>
+
+    <div class="record-group">
+      <div class="record-text-wrap">
+        <div class="record-text">学習内容</div>
+        <div class="record-textarea"><%= @study.content %></div>
+      </div>
+    </div>
+
+    <div class="record-group">
+      <div class="record-text-wrap">
+        <div class="record-text">振り返り</div>
+        <div class="record-textarea"><%= @study.review %></div>
+      </div>
+    </div>
+
+    <div class="user-mypage-btn">
+      <%= link_to "ユーザーマイページに戻る", user_path(@study.user) %>
+    </div>
+
+    <% if current_user == @study.user %>
+      <div class="nav-group">
+        <%= link_to "編集する", edit_study_path(@study), class:"edit-btn" %>
+        <%= link_to "削除する", study_path(@study), data: {turbo_method: :delete}, class:"destroy-btn" %>
+      </div>
+    <% end %>
+    
+  </div>
+</div>

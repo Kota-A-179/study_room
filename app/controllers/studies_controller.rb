@@ -1,6 +1,7 @@
 class StudiesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :show]
   before_action :set_room
-  before_action :set_study, only: [:edit, :update]
+  before_action :set_study, only: [:edit, :update, :show]
 
   def new
     @study = current_user.studies.new
@@ -15,21 +16,35 @@ class StudiesController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
+    unless current_user == @study.user
+      redirect_to study_path(@study)
+    end
   end
 
   def update
-    if @study.update(study_params)
-      redirect_to room_room_users_path(@room)
+    if current_user == @study.user
+      if @study.update(study_params)
+        redirect_to room_room_users_path(@room)
+      else
+        render :edit, status: :unprocessable_entity
+      end
     else
-      render :edit, status: :unprocessable_entity
+      redirect_to study_path(@study)
     end
   end
 
   def destroy
-    study = Study.find(params[:id])
-    study.destroy
-    redirect_to room_room_users_path(@room)
+    if current_user == @study.user
+      study = Study.find(params[:id])
+      study.destroy
+      redirect_to user_path(@study.user)
+    else
+      redirect_to study_path(@study)
+    end
   end
 
   private
