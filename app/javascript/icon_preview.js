@@ -3,7 +3,7 @@ const preview = () => {
   const iconPreviewImage = document.getElementById('icon-preview-image');
 
   if (iconDropdown && iconPreviewImage) {
-    iconDropdown.addEventListener('change', (event) => {
+    iconDropdown.addEventListener('click', (event) => {
       const selectedIconId = event.target.value;
       const selectedIcon = Icon.find(icon => icon.attributes.id == selectedIconId);
       if (selectedIcon) {
