@@ -1,10 +1,10 @@
 <%= render partial: 'shared/header', locals: { room: @room } %>
-<div class="room-users-index-main">
+<div class="room-users-main">
   <%= render partial: 'shared/sidebar', locals: { rooms: @rooms } %>
   <div class="room-users-wrap">
     <% @room.room_users.each do |room_user| %>
-      <div class="user">
-        <div class="user-icon">
+      <div class="room-user">
+        <div class="room-user-icon">
           <%= link_to(user_path(room_user.user), class: "user-mypage-link") do %>
             <span class="user-nickname"><%= room_user.user.nickname %></span>
             <%= image_tag room_user.user.icon.image_path, class: "user-mypage-icon-btn" %>
@@ -12,13 +12,13 @@
             <% end %>
           <% end %>
         </div>
-        <div class="user-status-occupation">
+        <div class="room-user-info">
           <%= room_user.user.status.name %>
-          <% if room_user.user.occupation.present? %>
+          <% if room_user.user.occupation.id != 1 %>
             (<%= room_user.user.occupation.name %>)
           <% end %>
         </div>
-        <div class="user-study-title">
+        <div class="room-user-info">
           <% if room_user.user.studies.present? %>
             <%= room_user.user.studies.last.title %>
           <% else %>
