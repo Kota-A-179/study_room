@@ -10,7 +10,7 @@
 .study-title{
   width: 60%;
   padding: 7px 25px;
-  margin: 2vh 2vw;
+  margin: 2vh 0 2vh 2vw;
   border-radius: 4px;
   font-size: 24px;
   color: black;
@@ -20,14 +20,14 @@
 .footer-nav{
   display: flex;
   min-width: 200px;
-  margin: 1vh 5vw;
+  margin: 1vh 5vw 1vh 0;
   list-style-type: none;
 }
 
 .study-edit-btn{
   text-decoration:none;
   margin-right: 5vw;
-  padding: 7px 25px;
+  padding: 1.5vh 1.6vw;
   border: 1px solid black;
   border-radius: 4px;
   color: #fff;
@@ -37,7 +37,7 @@
 
 .study-new-finish-btn{
   text-decoration: none;
-  padding: 7px 25px;
+  padding: 1.5vh 1.6vw;
   border: 1px solid black;
   border-radius: 4px;
   color: #fff;
