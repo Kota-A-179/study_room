@@ -24,7 +24,8 @@ class ApplicationController < ActionController::Base
   end
 
   def configure_permitted_parameter
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :status_id, :occupation_id, :icon_id, :birthday])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :status_id, :occupation_id, :icon_id, :goal, :birthday])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :status_id, :occupation_id, :icon_id, :goal, :birthday])
   end
   
   def room_user_destroy
