@@ -1,7 +1,6 @@
 .login-main {
   width: 100vw;
-  height: 100vh;
-  background-image: url('top-image.jpg');
+  height: 100vh;  
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;

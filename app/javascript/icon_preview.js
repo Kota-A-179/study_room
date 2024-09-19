@@ -7,7 +7,7 @@ const preview = () => {
       const selectedIconId = event.target.value;
       const selectedIcon = Icon.find(icon => icon.attributes.id == selectedIconId);
       if (selectedIcon) {
-        iconPreviewImage.src = `/assets/${selectedIcon.attributes.image_path}`;
+        iconPreviewImage.src = `${selectedIcon.attributes.image_path}`;
       }
     });
   }
