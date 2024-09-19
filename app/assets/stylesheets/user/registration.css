@@ -128,3 +128,10 @@
 .indispensable{
   color: #c82137;
 }
+
+.edit-info-text{
+  color: #c82137;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 3px;
+}
