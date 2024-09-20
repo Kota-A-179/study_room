@@ -28,15 +28,19 @@
     </div>
 
     <h2 class="goal-wrap">
-      目標：
+      目標：<%= @user.goal %>
     </h2>
 
     <div class="study-wrap">
       <h2 class="study-header">〇学習記録</h2>
       <div class="study-index">
         <ul class="study-list">
-          <% @studies.each do |study| %>
-            <li><%= link_to study.title, study_path(study), class: "study-show" %></li>
+          <% if @studies.present? %>
+            <% @studies.each do |study| %>
+              <li><%= link_to study.title, study_path(study), class: "study-show" %></li>
+            <% end %>
+          <% else %>
+            <div class="study-show">まだ学習記録はありません</div>
           <% end %>
         </ul>
       </div>
