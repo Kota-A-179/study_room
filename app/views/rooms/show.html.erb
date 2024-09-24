@@ -2,7 +2,7 @@
 <div class="room-users-main">
   <%= render partial: 'shared/sidebar', locals: { rooms: @rooms } %>
   <div class="room-users-wrap">
-    <% @room.users.each do |user| %>
+    <% @users.each do |user| %>
       <div class="room-user">
         <div class="room-user-icon">
           <%= link_to(user_path(user), class: "user-mypage-link") do %>
@@ -27,4 +27,4 @@
     <% end %>
   </div>
 </div>
-<%= render 'shared/footer' %>
+<%= render partial: 'shared/footer', locals:{study: @study} %>
