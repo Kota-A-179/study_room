@@ -58,5 +58,4 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_24_050902) do
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
   add_foreign_key "studies", "users"
-  add_foreign_key "users", "rooms"
 end
