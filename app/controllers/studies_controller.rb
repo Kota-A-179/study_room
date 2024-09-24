@@ -36,6 +36,9 @@ class StudiesController < ApplicationController
     end
   end
 
+  def finish
+  end
+
   def destroy
     if current_user == @study.user
       @study.destroy

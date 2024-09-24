@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     root to: 'users/sessions#new'
   end
   resources :rooms, only: :show 
-  resources :studies, except: :index
+  resources :studies, except: :index do
+    member do
+      patch 'finish'
+    end
+  end
   resources :users, only: :show
 end
