@@ -4,7 +4,7 @@ class User < ApplicationRecord
   belongs_to :occupation
   belongs_to :icon
 
-  has_one :room_user
+  belongs_to :room
   has_many :studies
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -15,5 +15,7 @@ class User < ApplicationRecord
   validates :status_id, presence: true, numericality: { other_than: 1, message: "を選択してください" }
   validates :icon_id, presence: true, numericality: { other_than: 1, message: "を選択してください" }
   validates :birthday, presence: true
+
+  validates :user_id, presence: false
 end
 

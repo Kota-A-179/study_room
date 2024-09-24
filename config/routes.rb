@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     root to: 'users/sessions#new'
   end
-  resources :rooms, only: [:create, :destroy] do
-    resources :room_users, only: :index
-  end
+  resources :rooms, only: :show 
   resources :studies, except: :index
   resources :users, only: :show
 end

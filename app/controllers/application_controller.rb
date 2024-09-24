@@ -4,16 +4,15 @@ class ApplicationController < ActionController::Base
   
   protected
   def after_sign_in_path_for(resource)
-    room_user_destroy
     @room = room_search || @room = Room.create(name: "#{Room.count + 1}")
-    @room.room_users.create(user_id: current_user.id)
-    room_room_users_path(room_id: @room.id) 
+    current_user.update(room_id: @room.id)
+    room_path(@room) 
   end
   
   def after_sign_up_path_for(resource)
     @room = room_search || @room = Room.create(name: "#{Room.count + 1}")
-    @room.room_users.create(user_id: resource.id)
-    room_room_users_path(room_id: @room.id) 
+    current_user.update(room_id: @room.id)
+    room_path(@room) 
   end
 
   private
@@ -28,13 +27,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :status_id, :occupation_id, :icon_id, :goal, :birthday])
   end
   
-  def room_user_destroy
-    RoomUser.where(user_id: current_user.id).destroy_all 
-  end
 
   def room_search
-    Room.all.includes(:room_users).each do |room|
-        return room if room.room_users.length < 15
+    Room.all.includes(:users).each do |room|
+        return room if room.users.length < 10
     end
     return nil
   end

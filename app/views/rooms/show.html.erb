@@ -1,0 +1,30 @@
+<%= render 'shared/header' %>
+<div class="room-users-main">
+  <%= render partial: 'shared/sidebar', locals: { rooms: @rooms } %>
+  <div class="room-users-wrap">
+    <% @room.users.each do |user| %>
+      <div class="room-user">
+        <div class="room-user-icon">
+          <%= link_to(user_path(user), class: "user-mypage-link") do %>
+            <span class="user-nickname"><%= user.nickname if user.nickname.present? %></span>
+            <%= image_tag user.icon.image_path, class: "user-mypage-icon-btn" %>
+          <% end %>
+        </div>
+        <div class="room-user-info">
+          <%= user.status.name %>
+          <% if user.occupation.id != 1 %>
+            (<%= user.occupation.name %>)
+          <% end %>
+        </div>
+        <div class="room-user-info">
+          <% if user.studies.present? %>
+            <%= user.studies.last.title %>
+          <% else %>
+            準備中
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render 'shared/footer' %>

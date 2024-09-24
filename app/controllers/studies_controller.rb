@@ -1,7 +1,6 @@
 class StudiesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :show]
-  before_action :set_room
-  before_action :set_study, only: [:edit, :update, :show]
+  before_action :set_study, only: [:edit, :update, :show, :destroy]
 
   def new
     @study = current_user.studies.new
@@ -10,7 +9,7 @@ class StudiesController < ApplicationController
   def create
     @study = current_user.studies.new(study_params)
     if @study.save
-      redirect_to room_room_users_path(@room)
+      redirect_to room_path(current_user.room)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +27,7 @@ class StudiesController < ApplicationController
   def update
     if current_user == @study.user
       if @study.update(study_params)
-        redirect_to room_room_users_path(@room)
+        redirect_to room_path(current_user.room)
       else
         render :edit, status: :unprocessable_entity
       end
@@ -39,19 +38,14 @@ class StudiesController < ApplicationController
 
   def destroy
     if current_user == @study.user
-      study = Study.find(params[:id])
-      study.destroy
-      redirect_to user_path(@study.user)
+      @study.destroy
+      redirect_to user_path(current_user)
     else
       redirect_to study_path(@study)
     end
   end
 
   private
-  def set_room
-    @room = Room.find(current_user.room_user.room_id)
-  end
-
   def set_study
     @study = Study.find(params[:id])
   end
