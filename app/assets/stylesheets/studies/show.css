@@ -104,9 +104,8 @@
 .edit-btn{
   width: 30%;
   margin: 0 50px;
-  border-radius: 4px;
   color: #fff;
-  background-color: rgba(153,204,101);
+  background-color: #6289a4;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
@@ -116,7 +115,6 @@
 .destroy-btn{
   width: 30%;
   margin: 0 50px;
-  border-radius: 4px;
   color: #fff;
   background-color: rgba(190,10,1,0.6);
   line-height: 48px;
