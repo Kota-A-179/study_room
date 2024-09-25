@@ -1,5 +1,6 @@
 <%= render 'shared/header' %>
-<%= form_with model: @study, class: "form-main", local: true do |f| %>
+<%= form_with model: @study, turbo_method: :patch, class: "form-main", id: "dynamic-form", local: true do |f| %>
+  <%= csrf_meta_tags %>
   <div class="form-wrap">
     <div class="study-form-header">
       <h1 class="study-form-header-text">
@@ -25,6 +26,12 @@
         <%= f.text_field :goal, class:"input-default", placeholder:"例) 不定詞の単元を終わらせる" %>
       </div>
     </div>
+    
+    <div class="form-group">
+      <div class="form-text-wrap">
+        <%= f.hidden_field :study_time, class:"input-default", id: "study-time-field" %>
+      </div>
+    </div>
 
     <div class="form-group">
       <div class="form-text-wrap">
@@ -42,8 +49,15 @@
       </div>
     </div>
 
-    <div class="study-register-btn">
-      <%= f.submit "学習更新", class:"register-blue-btn" %>
+    <div id="study-time-info" study-time-id="<%= @study.id %>"></div>
+
+    <div class="study-register">
+      <%= f.submit "記録する", class:"register-blue-btn" %>
+      <button class="register-red-btn" id="finish-btn">学習完了</button>
+    </div>
+
+    <div class="study-destroyer">
+      <%= link_to "削除する", study_path(@study), data: {turbo_method: :delete}, class:"study-destroy-btn" %>
     </div>
   </div>
 <% end %>
