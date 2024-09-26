@@ -72,6 +72,13 @@
   resize: none;
 }
 
+.study-time-wrap{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  text-decoration: underline;
+}
+
 .user-mypage-btn{
   width: 100%;
   margin: 50px auto;
@@ -80,21 +87,9 @@
   text-align: center;
 }
 
-.user-mypage-btn a{
-  width: 25%;
-  background: #005070;
-  border: 1px solid #005070;
-  border-radius: 4px;
-  color: #fff;
-  line-height: 48px;
-  font-size: 14px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 .nav-group{
   width: 50%;
-  margin: 100px auto 50px;
+  margin: 50px auto 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,7 +100,7 @@
   width: 30%;
   margin: 0 50px;
   color: #fff;
-  background-color: #6289a4;
+  background-color: #005070;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
@@ -117,6 +112,16 @@
   margin: 0 50px;
   color: #fff;
   background-color: rgba(190,10,1,0.6);
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.user-mypage-btn a{
+  width: 25%;
+  background: #6289a4;
+  color: #fff;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;

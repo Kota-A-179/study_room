@@ -63,10 +63,23 @@
   width: 70%;
 }
 
+.total-study-time{
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 24px;
+}
+
 .study-index{
   border: 1px solid black;
 }
 
 .study-show{
   text-decoration: none;
+  color: black;
+}
+
+.study-none{
+  text-align: center;
+  font-size: 24px;
 }

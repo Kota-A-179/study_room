@@ -33,17 +33,18 @@
 
     <div class="study-wrap">
       <h2 class="study-header">〇学習記録</h2>
-      <div class="study-index">
-        <ul class="study-list">
-          <% if @user.studies.present? %>
-            <% @user.studies.each do |study| %>
-              <li><%= link_to study.title, study_path(study), class: "study-show" %></li>
-            <% end %>
-          <% else %>
-            <div class="study-show">まだ学習記録はありません</div>
-          <% end %>
-        </ul>
-      </div>
+      <% if @user.studies.present? %>
+        <div class="total-study-time">合計学習時間：<%= @total_time %>時間</div>
+        <div class="study-index">
+          <ul class="study-list">
+              <% @user.studies.each do |study| %>
+                <li><%= link_to study.title, study_path(study), class: "study-show" %></li>
+              <% end %>
+          </ul>
+        </div>
+      <% else %>
+        <div class="study-none">まだ学習記録はありません</div>
+      <% end %>
     </div>
   </div>
 </div>
