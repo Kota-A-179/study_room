@@ -1,13 +1,17 @@
 <footer div class="footer">
   <div class="study-title">
-    <% if current_user.studies.present? %>
-      学習タイトル：<%= current_user.studies.last.title %>
+    <% if study != nil && study.study_time.nil? %>
+      <span>学習タイトル：<%= current_user.studies.last.title %></span>
+      <span>学習時間：<span id="time-display"></span>分</span>
     <% else %>
-      学習を始めましょう！
+      新たな学習を始めましょう！
     <% end %>
   </div>
   <ul class="footer-nav">
-    <li><%= link_to "編集する", edit_study_path(current_user.studies.last), class: "study-edit-btn" if current_user.studies.present? %></li>
-    <li><%= link_to "学習開始", new_study_path, class: "study-new-finish-btn" %></li>
+    <% if study != nil && study.study_time.nil? %>
+      <li><%= link_to "記録する", edit_study_path(@study), class: "nav-btn" %></li>
+    <% else %>
+      <li><%= link_to "学習開始", new_study_path, class: "nav-btn" %></li>
+    <% end %>
   </ul>
 </div>

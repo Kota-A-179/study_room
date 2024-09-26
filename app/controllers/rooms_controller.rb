@@ -3,5 +3,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
     @rooms = Room.all
+    @users = @room.users.includes(:studies)
+    @study = current_user.studies.last 
   end
 end

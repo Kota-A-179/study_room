@@ -28,8 +28,12 @@
       </div>
     </div>
 
-    <div class="user-mypage-btn">
-      <%= link_to "ユーザーマイページに戻る", user_path(@study.user) %>
+    <div class="record-group">
+      <% if @study.study_time.present? %>
+        <div class="study-time-wrap">学習時間：<%= @study.study_time %>分</div>
+      <% else %>
+        <div class="study-time-wrap">学習時間：<span id="time-display"></span>分</div>
+      <% end %>
     </div>
 
     <% if current_user == @study.user %>
@@ -38,6 +42,12 @@
         <%= link_to "削除する", study_path(@study), data: {turbo_method: :delete}, class:"destroy-btn" %>
       </div>
     <% end %>
+
+
+    <div class="user-mypage-btn">
+      <%= link_to "ユーザーマイページに戻る", user_path(@study.user) %>
+    </div>
+
     
   </div>
 </div>

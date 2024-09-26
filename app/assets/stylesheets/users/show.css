@@ -31,9 +31,8 @@
   padding: 1px 5px;
   margin: 0 20px;
   border: 1px solid #ddd;
-  border-radius: 4px;
   color: #fff;
-  background-color: #99cc65;
+  background-color: #6289a4;
   text-decoration: none;
 }
 
@@ -64,10 +63,23 @@
   width: 70%;
 }
 
+.total-study-time{
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 24px;
+}
+
 .study-index{
   border: 1px solid black;
 }
 
 .study-show{
   text-decoration: none;
+  color: black;
+}
+
+.study-none{
+  text-align: center;
+  font-size: 24px;
 }

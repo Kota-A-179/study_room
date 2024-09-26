@@ -15,19 +15,23 @@
   font-size: 24px;
   color: black;
   background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-nav{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   min-width: 200px;
-  margin: 1vh 5vw 1vh 0;
+  margin: 1vh 0;
   list-style-type: none;
 }
 
-.study-edit-btn{
+.nav-btn{
   text-decoration:none;
+  padding: 1.5vh 1.3vw;
   margin-right: 5vw;
-  padding: 1.5vh 1.6vw;
   border: 1px solid black;
   border-radius: 4px;
   color: #fff;
@@ -35,12 +39,3 @@
   font-weight: bold;
 }
 
-.study-new-finish-btn{
-  text-decoration: none;
-  padding: 1.5vh 1.6vw;
-  border: 1px solid black;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-}
