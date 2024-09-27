@@ -16,6 +16,5 @@ class User < ApplicationRecord
   validates :icon_id, presence: true, numericality: { other_than: 1, message: "を選択してください" }
   validates :birthday, presence: true
 
-  validates :room_id, presence: false
 end
 
