@@ -12,7 +12,7 @@
     <% end %>
   </div>
   <div class="room-user-info">
-    <% if user.studies.last.study_time.nil? %>
+    <% if user.studies.present? && user.studies.last.study_time.nil? %>
       <%= user.studies.last.title %>
     <% else %>
       準備中
