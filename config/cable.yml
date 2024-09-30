@@ -8,3 +8,5 @@ production:
   adapter: redis
   url: <%= ENV['REDIS_URL'] %>
   channel_prefix: study_room_production
+  allow_request_origin:
+    - https://study-room-rails7.onrender.com
