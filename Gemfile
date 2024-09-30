@@ -82,3 +82,4 @@ gem "devise-i18n"
 gem "rails-i18n"
 gem "active_hash"
 gem "aws-sdk-s3"
+gem 'rack-cors', require: 'rack/cors'
