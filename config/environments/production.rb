@@ -96,4 +96,6 @@ Rails.application.configure do
     'https://study-room-rails7.onrender.com',
     'http://study-room.onrender.com'
   ]
+  # アセットのプリコンパイルを指定する
+  config.assets.precompile += %w( channels/* )
 end
