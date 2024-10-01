@@ -1,4 +1,4 @@
-import consumer from "./consumer"
+import consumer from "channels/consumer"
 
 const roomId = document.getElementById("room-id").value;
 
