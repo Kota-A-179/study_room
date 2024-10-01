@@ -1,6 +1,8 @@
 import consumer from "channels/consumer"
 
-const roomId = document.getElementById("room-id").value;
+document.addEventListener("DOMContentLoaded", function() {
+  const roomId = document.getElementById("room-id").value;
+});
 
 consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
   connected() {
