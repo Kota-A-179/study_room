@@ -92,9 +92,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_cable.url = 'wss://study-room-rails7.onrender.com/cable'
-  config.action_cable.allowed_request_origins = [
-    'https://study-room-rails7.onrender.com'
-  ]
   config.action_cable.allowed_request_origins = ['https://study-room-rails7.onrender.com']
+  config.action_cable.log_tags = [ :action_cable ]
+  config.log_level = :debug
   
 end
