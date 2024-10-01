@@ -6,10 +6,12 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     room = room_search || room = Room.create(name: "#{Room.count + 1}")
     current_user.update(room_id: room.id)
+    cookies.encrypted[:user_id] = { value: current_user.id, expires: 1.hour.from_now }
     room_path(room) 
   end
   
   def after_sign_up_path_for(resource)
+    cookies.encrypted[:user_id] = { value: resource.id, expires: 1.hour.from_now }
     room_path(resource.room) 
   end
 
