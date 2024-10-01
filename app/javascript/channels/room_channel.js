@@ -6,10 +6,12 @@ document.addEventListener("DOMContentLoaded", function() {
   consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
     connected() {
       // Called when the subscription is ready for use on the server
+      console.log("Connected to RoomChannel");
     },
 
     disconnected() {
       // Called when the subscription has been terminated by the server
+      console.log("Disconnected from RoomChannel");
     },
 
     received(data) {

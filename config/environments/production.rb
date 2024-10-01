@@ -93,8 +93,7 @@ Rails.application.configure do
 
   config.action_cable.url = 'wss://study-room-rails7.onrender.com/cable'
   config.action_cable.allowed_request_origins = [
-    'https://study-room-rails7.onrender.com',
-    'http://study-room.onrender.com'
+    'https://study-room-rails7.onrender.com'
   ]
   
 end
