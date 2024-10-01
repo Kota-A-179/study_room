@@ -95,5 +95,6 @@ Rails.application.configure do
   config.action_cable.allowed_request_origins = [
     'https://study-room-rails7.onrender.com'
   ]
+  config.action_cable.allowed_request_origins = ['https://study-room-rails7.onrender.com']
   
 end
