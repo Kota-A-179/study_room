@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
     ActionCable.server.broadcast "room_channel_#{@room.id}", {
       action: 'add',
-      user: render_to_string(partial: 'room_user', locals: {user: current_user})
+      user: render_to_string(partial: 'shared/room_user', locals: {user: current_user})
     }
   end
 end

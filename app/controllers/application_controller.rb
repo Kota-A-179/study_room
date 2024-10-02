@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     ActionCable.server.broadcast "room_channel_#{current_user.room.id}", {
           action: 'update',
           user_id: current_user.id,
-          html: render_to_string(partial: 'room_user', locals: { user: current_user })
+          html: render_to_string(partial: 'shared/room_user', locals: { user: current_user })
         }
   end
 
