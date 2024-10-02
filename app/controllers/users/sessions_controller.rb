@@ -2,13 +2,19 @@ class Users::SessionsController < Devise::SessionsController
 
   def create
     super
-    @room = room_search || Room.create(name: "#{Room.count + 1}")
-    current_user.update(room_id: @room.id)
+    room = room_search || Room.create(name: "#{Room.count + 1}")
+    current_user.update(room_id: room.id)
     cookies.encrypted[:user_id] = { value: current_user.id, expires: 1.hour.from_now }
+    session[:room_id] = room.id
   end
   
   def after_sign_in_path_for(resource)
-    room_path(@room) 
+    room_id = session[:room_id]
+    if room_id.present?
+      room_path(Room.find(room_id))
+    else
+      root_path
+    end 
   end
 
   def destroy
