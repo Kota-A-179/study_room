@@ -7,7 +7,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     cookies.encrypted[:user_id] = { value: resource.id, expires: 1.hour.from_now }
-    resource.room.present? room_path(resource.room) : room_path
+    if resource.room
+      room_path(resource.room)
+    else
+      root_path
+    end
   end
 
   def update
