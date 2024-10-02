@@ -3,7 +3,7 @@ import consumer from "channels/consumer"
 let currentRoomId = null;
 let currentSubscription = null;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("turbo:load", function() {
   const roomId = document.getElementById("room-id").value;
 
   if (currentRoomId !== roomId) {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     currentRoomId = roomId;
 
-    consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
+    currentSubscription = consumer.subscriptions.create({ channel: "RoomChannel", room_id: roomId }, {
       connected() {
         // Called when the subscription is ready for use on the server
         console.log("Connected to RoomChannel");
@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (data.action == 'add') {
           // 受け取ったデータを画面に追加
+          const userElement = document.getElementById(`user-${data.user_id}`);
+          if (!userElement) {
           roomUsersWrap.insertAdjacentHTML('beforeend', data.user);
+          }
         } else if (data.action == 'remove') {
           //ユーザーのHTML要素を削除
           const userElement = document.getElementById(`user-${data.user_id}`);
