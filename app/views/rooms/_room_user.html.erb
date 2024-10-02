@@ -1,4 +1,4 @@
-<div class="room-user">
+<div class="room-user" id="user-<%= user.id || "unknown" %>">
   <div class="room-user-icon">
     <%= link_to(user_path(user), class: "user-mypage-link") do %>
       <span class="user-nickname"><%= user.nickname if user.nickname.present? %></span>

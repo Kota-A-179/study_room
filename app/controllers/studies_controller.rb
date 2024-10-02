@@ -9,6 +9,7 @@ class StudiesController < ApplicationController
   def create
     @study = current_user.studies.new(study_params)
     if @study.save
+      update_room_user
       redirect_to room_path(current_user.room)
     else
       render :new, status: :unprocessable_entity
@@ -27,6 +28,7 @@ class StudiesController < ApplicationController
   def update
     if current_user == @study.user
       if @study.update(study_params)
+        update_room_user
         redirect_to room_path(current_user.room)
       else
         render :edit, status: :unprocessable_entity
@@ -39,6 +41,7 @@ class StudiesController < ApplicationController
   def finish
     if current_user == @study.user
       if @study.update(study_finish_params)
+        update_room_user
         redirect_to room_path(current_user.room)
       else
         render :edit, status: :unprocessable_entity
@@ -51,6 +54,7 @@ class StudiesController < ApplicationController
   def destroy
     if current_user == @study.user
       @study.destroy
+      update_room_user
       redirect_to room_path(current_user.room)
     else
       redirect_to room_path(current_user)
