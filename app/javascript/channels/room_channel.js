@@ -26,6 +26,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if (userElement) {
           userElement.remove();
         }
+      } else if (data.action == 'update') {
+        //ユーザーのHTML要素を更新
+        const userElement = document.getElementById(`user-${data.user_id}`);
+        if (userElement) {
+          userElement.outerHTML = data.html;
+        }
       }
     }
   });
