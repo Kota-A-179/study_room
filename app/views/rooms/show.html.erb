@@ -1,3 +1,4 @@
+<%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
 <%= render 'shared/header' %>
 <div class="room-users-main">
   <%= render partial: 'sidebar', locals: { rooms: @rooms } %>
@@ -28,4 +29,3 @@
   </div>
 </div>
 <%= render partial: 'footer', locals:{study: @study} %>
-<%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
