@@ -3,4 +3,8 @@
 
 import { createConsumer } from "@rails/actioncable"
 
-export default createConsumer("wss://study-room-rails7.onrender.com/cable")
+const cableUrl = window.location.hostname === 'localhost'
+  ? "ws://localhost:3000/cable"
+  : "wss://study-room-rails7.onrender.com/cable"
+
+export default createConsumer(cableUrl)
