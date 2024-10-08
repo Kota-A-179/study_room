@@ -42,7 +42,7 @@ class StudiesController < ApplicationController
     if current_user == @study.user
       if @study.update(study_finish_params)
         update_room_user
-        redirect_to room_path(current_user.room)
+        redirect_to user_path(current_user)
       else
         render :edit, status: :unprocessable_entity
       end
@@ -55,7 +55,7 @@ class StudiesController < ApplicationController
     if current_user == @study.user
       @study.destroy
       update_room_user
-      redirect_to room_path(current_user.room)
+      redirect_to user_path(current_user)
     else
       redirect_to room_path(current_user)
     end
