@@ -45,7 +45,11 @@ https://study-room-rails7.onrender.com
 
 # データベース設計
 
+[![Image from Gyazo](https://i.gyazo.com/8a42607a9bc99772bb4c7663977b182c.png)](https://gyazo.com/8a42607a9bc99772bb4c7663977b182c)
+
 # 画面遷移図
+
+[![Image from Gyazo](https://i.gyazo.com/c7b0117ed4e1649b49dd4bc081cea099.png)](https://gyazo.com/c7b0117ed4e1649b49dd4bc081cea099)
 
 # 開発環境
 
@@ -57,6 +61,13 @@ https://study-room-rails7.onrender.com
 ・タスク管理
 
 # ローカルでの動作方法
+
+以下のコマンドを順に実行。  
+% git clone https://github.com/Kota-A-179/study_room.git  
+% cd study_room  
+% bundle install
+% rails db:create  
+% rails db:migrate
 
 # 工夫したポイント
 
