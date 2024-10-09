@@ -49,7 +49,7 @@ https://study-room-rails7.onrender.com
 
 # 画面遷移図
 
-[![Image from Gyazo](https://i.gyazo.com/c7b0117ed4e1649b49dd4bc081cea099.png)](https://gyazo.com/c7b0117ed4e1649b49dd4bc081cea099)
+[![Image from Gyazo](https://i.gyazo.com/2956cc3db9fb6416a633226aaba24045.png)](https://gyazo.com/2956cc3db9fb6416a633226aaba24045)
 
 # 開発環境
 
