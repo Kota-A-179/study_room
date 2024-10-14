@@ -1,7 +1,7 @@
 <div class="sidebar">
   <% rooms.each do |room| %>
     <div class="room-name">
-      <%= link_to room.name, room_path(room) %>
+      <%= link_to room.name, room_path(room), data: {turbo_frame: "room-users-wrap"} %>
     </div>
   <% end %>
 </div>
