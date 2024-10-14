@@ -2,30 +2,32 @@
   <%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
   <div class="room-users-main">
     <%= render partial: 'sidebar', locals: { rooms: @rooms } %>
-    <div class="room-users-wrap">
-      <% @users.each do |user| %>
-        <div class="room-user <%= 'current-user' if user == current_user %>" id="user-<%= user.id %>">
-          <div class="room-user-icon">
-            <%= link_to(user_path(user), class: "user-mypage-link") do %>
-              <span class="user-nickname"><%= user.nickname if user.nickname.present? %></span>
-              <%= image_tag user.icon.image_path, class: "user-mypage-icon-btn" %>
-            <% end %>
+    <turbo-frame id="room-users-wrap">
+      <div class="room-users-wrap">
+        <% @users.each do |user| %>
+          <div class="room-user <%= 'current-user' if user == current_user %>" id="user-<%= user.id %>">
+            <div class="room-user-icon">
+              <%= link_to(user_path(user), class: "user-mypage-link") do %>
+                <span class="user-nickname"><%= user.nickname if user.nickname.present? %></span>
+                <%= image_tag user.icon.image_path, class: "user-mypage-icon-btn" %>
+              <% end %>
+            </div>
+            <div class="room-user-info">
+              <%= user.status.name %>
+              <% if user.occupation.id != 1 %>
+                (<%= user.occupation.name %>)
+              <% end %>
+            </div>
+            <div class="room-user-info">
+              <% if user.studies.present? && user.studies.last.study_time.nil? %>
+                <%= user.studies.last.title %>
+              <% else %>
+                準備中
+              <% end %>
+            </div>
           </div>
-          <div class="room-user-info">
-            <%= user.status.name %>
-            <% if user.occupation.id != 1 %>
-              (<%= user.occupation.name %>)
-            <% end %>
-          </div>
-          <div class="room-user-info">
-            <% if user.studies.present? && user.studies.last.study_time.nil? %>
-              <%= user.studies.last.title %>
-            <% else %>
-              準備中
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    </turbo-frame>
   </div>
 <%= render partial: 'footer', locals:{study: @study} %>
