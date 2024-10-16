@@ -5,11 +5,5 @@ class RoomsController < ApplicationController
     @rooms = Room.all
     @users = @room.users.includes(:studies)
     @study = current_user.studies.last 
-
-    ActionCable.server.broadcast "room_channel_#{@room.id}", {
-      action: 'add',
-      user_id: current_user.id,
-      user: render_to_string(partial: 'shared/room_user', locals: {user: current_user})
-    }
   end
 end
