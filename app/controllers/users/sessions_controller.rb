@@ -2,7 +2,7 @@ class Users::SessionsController < Devise::SessionsController
 
   def create
     super 
-    @room = Room.joins(:users).group("rooms.id").having("COUNT(users.id) < 10").first || Room.create(name: "#{Room.count + 1}")
+    @room = Room.left_outer_joins(:users).group("rooms.id").having("COUNT(users.id) < 10").first || Room.create(name: "#{Room.count + 1}")
     current_user.update(room_id: @room.id)
     cookies.encrypted[:user_id] = { value: current_user.id, expires: 1.hour.from_now }
     session[:room_id] = @room.id

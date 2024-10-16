@@ -20,7 +20,7 @@ class User < ApplicationRecord
 
   private
   def assign_room
-    room = Room.joins(:users).group("rooms.id").having("COUNT(users.id) < 10").first || Room.create(name: "#{Room.count + 1}")
+    room = Room.left_outer_joins(:users).group("rooms.id").having("COUNT(users.id) < 10").first || Room.create(name: "#{Room.count + 1}")
     update(room_id: room.id)
     room
   end
