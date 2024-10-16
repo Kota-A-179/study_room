@@ -1,7 +1,13 @@
 <%= render 'shared/header' %>
   <%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
   <div class="room-users-main">
-    <%= render partial: 'sidebar', locals: { rooms: @rooms } %>
+    <div class="sidebar">
+      <% @rooms.each do |room| %>
+        <div class="room-name">
+          <%= link_to room.name, room_path(room), data: {turbo_frame: "room-users-wrap"} %>
+        </div>
+      <% end %>
+    </div>
     <turbo-frame id="room-users-wrap">
       <div class="room-users-wrap">
         <% @users.each do |user| %>
