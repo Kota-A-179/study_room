@@ -26,24 +26,31 @@ document.addEventListener("turbo:load", function() {
 
       received(data) {
         const roomUsersWrap = document.querySelector('.room-users-wrap');
+        const sidebar = document.querySelector('.sidebar');
 
-        if (data.action == 'add') {
-          // 受け取ったデータを画面に追加
+        if (data.action == 'addUser') {
+          // ユーザーのHTML要素を追加
           const userElement = document.getElementById(`user-${data.user_id}`);
           if (!userElement) {
           roomUsersWrap.insertAdjacentHTML('beforeend', data.user);
           }
-        } else if (data.action == 'remove') {
+        } else if (data.action == 'removeUser') {
           //ユーザーのHTML要素を削除
           const userElement = document.getElementById(`user-${data.user_id}`);
           if (userElement) {
             userElement.remove();
           }
-        } else if (data.action == 'update') {
+        } else if (data.action == 'updateUser') {
           //ユーザーのHTML要素を更新
           const userElement = document.getElementById(`user-${data.user_id}`);
           if (userElement) {
             userElement.outerHTML = data.html;
+          }
+        } else if (data.action == 'removeRoom') {
+          //ルームリンクのHTML要素を削除
+          const roomElement = document.getElementById(`room-${data.room_id}`);
+          if (roomElement) {
+            roomElement.remove();
           }
         }
       }
