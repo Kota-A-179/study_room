@@ -1,13 +1,10 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameter, only: [:create, :update]
 
-  def create
-    super
-  end
-
   def after_sign_up_path_for(resource)
     cookies.encrypted[:user_id] = { value: resource.id, expires: 1.hour.from_now }
     if resource.room
+      room_user_add(resource, resource.room)
       room_path(resource.room)
     else
       root_path
@@ -33,4 +30,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:user).permit(:nickname, :status_id, :occupation_id, :icon_id, :goal, :birthday)
   end
 
+  def room_user_add(user, room)
+    ActionCable.server.broadcast "room_channel_#{room.id}", {
+      action: 'addUser',
+      user_id: user.id,
+      user: render_to_string(partial: 'shared/room_user', locals: {user: user})
+    }
+  end
 end

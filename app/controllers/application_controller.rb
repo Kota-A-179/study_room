@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   def update_room_user
     ActionCable.server.broadcast "room_channel_#{current_user.room.id}", {
-          action: 'update',
+          action: 'updateUser',
           user_id: current_user.id,
           html: render_to_string(partial: 'shared/room_user', locals: { user: current_user })
         }
