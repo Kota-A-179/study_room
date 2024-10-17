@@ -1,4 +1,13 @@
+/* PC表示時 */
 .study-register{
   width: 50%;
   margin: 50px auto 0;
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  .study-register{
+    width: 50%;
+    margin: 50px auto 0;
+  }
 }

@@ -1,3 +1,4 @@
+/* PC表示時 */
 .header{
   width: 100vw;
   background-color: #6289a4;
@@ -42,4 +43,53 @@
   color: #fff;
   font-size: 18px;
   font-weight: bold;
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  .header{
+    width: 100vw;
+    background-color: #6289a4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .app-name a{
+    width: 185px;
+    height: 49px;
+    margin: 1vh 2vw;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header-nav{
+    display: flex;
+    min-width: 200px;
+    margin: 1vh 5vw;
+    list-style-type: none;
+  }
+  
+  .mypage-btn{
+    text-decoration: none;
+    margin-right: 5vw;
+    padding: 1.2vh 1.6vw;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .logout-btn{
+    text-decoration: none;
+    padding: 1.2vh 1.6vw;
+    border: 1px solid black;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
 }

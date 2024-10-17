@@ -1,3 +1,4 @@
+/* PC表示時 */
 .mypage-main{
   width: 100%;
   min-width: 800px;
@@ -82,4 +83,93 @@
 .study-none{
   text-align: center;
   font-size: 24px;
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  .mypage-main{
+    width: 100%;
+    min-width: 800px;
+    height: 100%;
+    padding: 50px 0 100px;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mypage-wrap{
+    width: 60%;
+    background-color: white;
+    padding-bottom: 70px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-wrap{
+    width: 70%;
+  }
+  
+  .user-header{
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-header a{
+    padding: 1px 5px;
+    margin: 0 20px;
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: #6289a4;
+    text-decoration: none;
+  }
+  
+  .user-info-index{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-mypage-icon{
+    width: 120px;
+    height: auto;
+    margin: 10px;
+  }
+  
+  .user-info-text{
+    margin: 0 50px;
+    text-decoration: underline;
+  }
+  
+  .goal-wrap{
+    width: 70%;
+    border: 2px solid #c82137;
+  }
+  
+  .study-wrap{
+    width: 70%;
+  }
+  
+  .total-study-time{
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 24px;
+  }
+  
+  .study-index{
+    border: 1px solid black;
+  }
+  
+  .study-show{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .study-none{
+    text-align: center;
+    font-size: 24px;
+  }
 }
