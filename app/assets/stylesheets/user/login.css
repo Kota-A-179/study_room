@@ -3,7 +3,7 @@
   width: 100vw;
   height: 100vh;  
   background-size: cover;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: lighten;
   display: flex;
@@ -56,58 +56,68 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
+  html {
+    font-size: calc(100vw / 40);
+  }
+
   .login-main {
     width: 100vw;
-    height: 100vh;  
+    height: 100vh;
     background-size: cover;
-    background-position: right;
+    background-position: center;
     background-repeat: no-repeat;
     background-blend-mode: lighten;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
-  .login-title{
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  .login-title {
+    margin-top: 23vh;
   }
-  
-  .sub-title{
-    font-size: 40px;
-    font-weight: 500;
+
+  .sub-title {
+    font-size: clamp(2.5rem, calc(2.5rem + 0.8vw), 3.0rem);
   }
-  
-  .main-title{
-    font-size: 60px;
-    font-weight: 600;
+
+  .main-title {
+    font-size: clamp(3.7rem, calc(3.5rem + 0.8vw), 4.2rem);
   }
-  
-  .access-menu{
-    width: 40vw;
-    margin-top: 80px;
-    padding: 20px 0;
+
+  .access-menu {
+    width: 80vw;
+    margin-top: 4vh; 
+    padding: 1.5vh 0; 
     border-radius: 5px;
     background-color: rgba(98,137,164,0.7);
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-  
   }
-  
-  .new-registration a{
-    color: black;
-    padding: 10px;
+
+  .new-registration {
+    margin: 1.5vh 0 ;
+  }
+  .new-registration a {
+    font-size: clamp(1.2rem, calc(1.0rem + 0.8vw), 1.7rem);
+    padding: 1.2vh; 
     border: 1px solid black;
     border-radius: 5px;
     background-color: #fff;
     text-decoration: none;
   }
-  
-  
-  .session a{
-    color: black;
+
+  .session {
+    margin: 1.5vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .session-btn {
+    margin: 0.7vh 0 1.5vh;
+    display: flex;
+    justify-content: center;
   }
 }
