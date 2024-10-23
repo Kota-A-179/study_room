@@ -49,6 +49,7 @@
 @media (max-width: 500px) {
   .header{
     width: 100vw;
+    height: 5vh;
     background-color: #6289a4;
     display: flex;
     justify-content: space-between;
@@ -56,10 +57,10 @@
   }
   
   .app-name a{
-    width: 185px;
-    height: 49px;
-    margin: 1vh 2vw;
-    font-size: 40px;
+    width: 32vw;
+    height: 7.5vh;
+    margin: 1.5vh 4vw;
+    font-size: 2rem;
     font-weight: bold;
     color: #fff;
     text-decoration: none;
@@ -67,29 +68,29 @@
   
   .header-nav{
     display: flex;
-    min-width: 200px;
-    margin: 1vh 5vw;
+    min-width: 40vw;
+    margin: 1.5vh 5vw;
     list-style-type: none;
   }
   
   .mypage-btn{
     text-decoration: none;
     margin-right: 5vw;
-    padding: 1.2vh 1.6vw;
+    padding: 1.2vh 2.6vw;
     border: 1px solid black;
     border-radius: 4px;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.4rem;
     font-weight: bold;
   }
   
   .logout-btn{
     text-decoration: none;
-    padding: 1.2vh 1.6vw;
+    padding: 1.2vh 2.6vw;
     border: 1px solid black;
     border-radius: 4px;
     color: #fff;
-    font-size: 18px;
+    font-size: 1.4rem;
     font-weight: bold;
   }
 }
