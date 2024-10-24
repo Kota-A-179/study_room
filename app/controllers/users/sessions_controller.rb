@@ -34,7 +34,7 @@ class Users::SessionsController < Devise::SessionsController
     ActionCable.server.broadcast "room_channel_#{@room.id}", {
       action: 'addUser',
       user_id: current_user.id,
-      user: render_to_string(partial: 'shared/room_user', locals: {room_user: current_user})
+      user: render_to_string(partial: 'rooms/room_user', locals: {room_user: current_user})
     }
   end
 
