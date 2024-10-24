@@ -1,19 +1,15 @@
 <%= render 'shared/header' %>
-  <%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
-  <div class="room-users-main">
-    <div class="sidebar">
-      <% @rooms.each do |room| %>
-        <div class="room-name" id="room-<%= room.id %>">
-          <%= link_to room.name, room_path(room), data: {turbo_frame: "room-users-wrap"} %>
-        </div>
-      <% end %>
-    </div>
-    <turbo-frame id="room-users-wrap">
-      <div class="room-users-wrap">
-        <%= render partial: 'shared/room_user', collection: @users %>
-      </div>
-    </turbo-frame>
+<%= hidden_field_tag 'room-id', @room.id, id: 'room-id' %>
+<div class="room-users-main">
+  <div class="sidebar">
+    <%= render partial: 'room', collection: @rooms %>
   </div>
+  <turbo-frame id="room-users-wrap">
+  <div class="room-users-wrap">
+    <%= render partial: 'room_user', collection: @users %>
+  </div>
+  </turbo-frame>
+</div>
 <div class="footer">
   <div class="study-title">
     <% if @study != nil && @study.study_time.nil? %>
