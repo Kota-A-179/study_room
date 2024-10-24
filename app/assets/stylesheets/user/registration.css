@@ -117,7 +117,7 @@
 
 .register-btn{
   width: 50%;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .register-blue-btn{
@@ -143,10 +143,6 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
-  html {
-    font-size: calc(100vw / 40);
-  }
-
   .field_with_errors {
     display: contents;
   }
@@ -265,7 +261,7 @@
   
   .register-btn{
     width: 80%;
-    margin: 0 auto;
+    margin: 1vh auto;
   }
   
   .register-blue-btn{
