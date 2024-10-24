@@ -34,7 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     ActionCable.server.broadcast "room_channel_#{room.id}", {
       action: 'addUser',
       user_id: user.id,
-      user: render_to_string(partial: 'shared/room_user', locals: {user: user})
+      user: render_to_string(partial: 'shared/room_user', locals: {room_user: user})
     }
   end
 end

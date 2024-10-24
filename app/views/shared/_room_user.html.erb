@@ -1,19 +1,19 @@
-<div class="room-user" id="user-<%= user.id || "unknown" %>">
+<div class="room-user <%= 'current-user' if room_user == current_user %>" id="user-<%= room_user.id || "unknown" %>">
   <div class="room-user-icon">
-    <%= link_to(user_path(user), class: "user-mypage-link") do %>
-      <span class="user-nickname"><%= user.nickname if user.nickname.present? %></span>
-      <%= image_tag user.icon.image_path, class: "user-mypage-icon-btn" %>
+    <%= link_to(user_path(room_user), class: "user-mypage-link") do %>
+      <span class="user-nickname"><%= room_user.nickname if room_user.nickname.present? %></span>
+      <%= image_tag room_user.icon.image_path, class: "user-mypage-icon-btn" %>
     <% end %>
   </div>
   <div class="room-user-info">
-    <%= user.status.name %>
-    <% if user.occupation.id != 1 %>
-      (<%= user.occupation.name %>)
+    <%= room_user.status.name %>
+    <% if room_user.occupation.id != 1 %>
+      (<%= room_user.occupation.name %>)
     <% end %>
   </div>
   <div class="room-user-info">
-    <% if user.studies.present? && user.studies.last.study_time.nil? %>
-      <%= user.studies.last.title %>
+    <% if room_user.studies.present? && room_user.studies.last.study_time.nil? %>
+      <%= room_user.studies.last.title %>
     <% else %>
       準備中
     <% end %>
