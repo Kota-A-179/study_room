@@ -1,6 +1,6 @@
 <div class="room-user <%= 'current-user' if room_user == current_user %>" id="user-<%= room_user.id || "unknown" %>">
   <div class="room-user-icon">
-    <%= link_to(user_path(room_user), class: "user-mypage-link") do %>
+    <%= link_to(user_path(room_user), data: { turbo: false }, class: "user-mypage-link") do %>
       <span class="user-nickname"><%= room_user.nickname if room_user.nickname.present? %></span>
       <%= image_tag room_user.icon.image_path, class: "user-mypage-icon-btn" %>
     <% end %>
