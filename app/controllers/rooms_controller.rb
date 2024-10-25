@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.turbo_stream { render partial: 'room_users', locals: { users: @users } }
+      format.turbo_stream { render partial: 'room_users', locals: { users: @users } } if turbo_frame_request?
     end
   end
 end
