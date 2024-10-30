@@ -80,28 +80,30 @@
 @media (max-width: 500px) {
   .room-users-main{
     width: 100vw;
-    height: calc( 85vh - 67.9px );
-    display: flex;
+    height: calc( 85vh - 25px );
+    display: block !important;
   }
   
   .sidebar{
-    min-width: 70px;
-    height: 100%;
+    width: 100vw;
+    height: 25px;
     background-color: #005070;
     color: #fff;
+    display: flex;
+    justify-content: left;
     overflow: scroll;
   }
   
   .room-name{
-    height: 70px;
-    padding: 10px 0;
+    height: 25px;
+    padding: 0;
     text-align: center;
   }
   
   .room-name a{
     color: #fff;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 14px;
+    line-height: 25px;
   }
   
   .room-users-wrap{
