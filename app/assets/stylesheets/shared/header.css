@@ -69,28 +69,26 @@
   .header-nav{
     display: flex;
     min-width: 40vw;
-    margin: 1.5vh 5vw;
+    margin: 1.5vh 2vw;
     list-style-type: none;
   }
   
   .mypage-btn{
     text-decoration: none;
-    margin-right: 5vw;
-    padding: 1.2vh 2.6vw;
-    border: 1px solid black;
-    border-radius: 4px;
+    margin-right: 2vw;
+    padding: 0.5vh 2.0vw;
+    border: none;
     color: #fff;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: bold;
   }
   
   .logout-btn{
     text-decoration: none;
-    padding: 1.2vh 2.6vw;
-    border: 1px solid black;
-    border-radius: 4px;
+    padding: 0.5vh 2.0vw;
     color: #fff;
-    font-size: 1.4rem;
+    border: none;
+    font-size: 1.5rem;
     font-weight: bold;
   }
 }
